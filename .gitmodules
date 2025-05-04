@@ -1,0 +1,12 @@
+[submodule "third_party/x264"]
+	path = third_party/x264
+	url = https://code.videolan.org/videolan/x264.git
+[submodule "third_party/nv-codec-headers"]
+	path = third_party/nv-codec-headers
+	url = https://git.videolan.org/git/ffmpeg/nv-codec-headers.git
+[submodule "third_party/fdk-aac"]
+	path = third_party/fdk-aac
+	url = https://gitcode.com/mstorsjo/fdk-aac.git
+[submodule "third_party/SDL"]
+	path = third_party/SDL
+	url = https://github.com/libsdl-org/SDL.git
