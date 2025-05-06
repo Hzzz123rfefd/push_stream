@@ -14,10 +14,6 @@ ExternalProject_Add(
     BUILD_IN_SOURCE 0
     BUILD_ALWAYS 0
 )
-add_custom_command(
-    TARGET x264 POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E rm -rf ${CMAKE_BINARY_DIR}/x264-prefix
-)
 
 # 导入lame环境
 set(LAME_SOURCE_DIR ${CMAKE_SOURCE_DIR}/third_party/lame)
@@ -29,10 +25,6 @@ ExternalProject_Add(
     INSTALL_COMMAND  make install
     BUILD_IN_SOURCE 0
     BUILD_ALWAYS 0
-)
-add_custom_command(
-    TARGET lame POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E rm -rf ${CMAKE_BINARY_DIR}/lame-prefix
 )
 
 ## 导入SDL环境
@@ -46,11 +38,6 @@ ExternalProject_Add(
     BUILD_IN_SOURCE 0
     BUILD_ALWAYS 0
 )
-add_custom_command(
-    TARGET SDL POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E rm -rf ${CMAKE_BINARY_DIR}/SDL-prefix
-)
-
 
 # 导入fdk环境
 set(FDK_SOURCE_DIR ${CMAKE_SOURCE_DIR}/third_party/fdk-aac)
@@ -72,10 +59,6 @@ ExternalProject_Add(
     BUILD_IN_SOURCE 0
     BUILD_ALWAYS 0
 )
-add_custom_command(
-    TARGET fdk POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E rm -rf ${CMAKE_BINARY_DIR}/fdk-prefix
-)
 
 ## 导入ffmpeg环境
 set(FFMPEG_SOURCE_DIR ${CMAKE_SOURCE_DIR}/third_party/ffmpeg)
@@ -89,10 +72,28 @@ ExternalProject_Add(
     BUILD_ALWAYS 0
 )
 
-add_custom_command(
-    TARGET ffmpeg POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E rm -rf ${CMAKE_BINARY_DIR}/ffmpeg-prefix
-)
+
+# set(CPP_SOURCE_FILES
+#     main.cpp
+#     src/RtmpMediaEngine.cpp
+# )
+
+# include_directories(inc)
+# include_directories(sdks/include)
+# link_directories(sdks/lib)
+
+# add_executable(prog ${CPP_SOURCE_FILES})
+# target_link_libraries(prog -lavformat)
+# target_link_libraries(prog -lavcodec)
+# target_link_libraries(prog -lavutil)
+# target_link_libraries(prog -lpthread)
+# target_link_libraries(prog -lrtmp)
+# target_link_libraries(prog -lswscale)
+# target_link_libraries(prog -lswresample)
+# target_link_libraries(prog -lavfilter)
+
+
+
 
 
 
