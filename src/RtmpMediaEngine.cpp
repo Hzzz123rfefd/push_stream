@@ -86,7 +86,7 @@ int RtmpMediaEngine::initVideoEncoderCore(int64_t bitRate, int BFrameNum, bool u
         return -2;
     }
     // 3 设置编码器参数
-    m_cVideo_codecContext->profile = FF_PROFILE_H264_HIGH;                             // 表示使用H.264的高级别配置
+    m_cVideo_codecContext->profile = AV_PROFILE_H264_HIGH;                             // 表示使用H.264的高级别配置
     m_cVideo_codecContext->bit_rate = bitRate;                                         // 设置码率
     m_cVideo_codecContext->width = m_cMediaMessage.m_nVideoWight;                      // 设置视频宽度
     m_cVideo_codecContext->height = m_cMediaMessage.m_nVideoHeight;                    // 设置视频高度

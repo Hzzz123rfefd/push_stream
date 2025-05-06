@@ -73,16 +73,25 @@ ExternalProject_Add(
 )
 
 
-# set(CPP_SOURCE_FILES
-#     main.cpp
-#     src/RtmpMediaEngine.cpp
-# )
+set(CPP_SOURCE_FILES
+    main.cpp
+    src/RtmpMediaEngine.cpp
+)
 
-# include_directories(inc)
-# include_directories(sdks/include)
-# link_directories(sdks/lib)
-
-# add_executable(prog ${CPP_SOURCE_FILES})
+include_directories(include ${3PARTY_BUILD_DIR}/include)
+link_directories(${3PARTY_BUILD_DIR}/lib)
+add_executable(prog ${CPP_SOURCE_FILES})
+target_link_libraries(
+    prog
+    -lavformat
+    -lavcodec
+    -lavutil
+    -lpthread
+    -lrtmp
+    -lswscale
+    -lswresample
+    -lavfilter
+)
 # target_link_libraries(prog -lavformat)
 # target_link_libraries(prog -lavcodec)
 # target_link_libraries(prog -lavutil)
