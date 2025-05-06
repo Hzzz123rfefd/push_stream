@@ -1,0 +1,1 @@
+cmake .. -DCMAKE_INSTALL_PREFIX="/home/ubuntu/work/push_stream/build/install" 
