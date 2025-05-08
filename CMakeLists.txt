@@ -92,14 +92,6 @@ target_link_libraries(
     -lswresample
     -lavfilter
 )
-# target_link_libraries(prog -lavformat)
-# target_link_libraries(prog -lavcodec)
-# target_link_libraries(prog -lavutil)
-# target_link_libraries(prog -lpthread)
-# target_link_libraries(prog -lrtmp)
-# target_link_libraries(prog -lswscale)
-# target_link_libraries(prog -lswresample)
-# target_link_libraries(prog -lavfilter)
 
 
 
